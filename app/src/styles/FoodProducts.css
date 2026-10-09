@@ -1,0 +1,167 @@
+/* Overall Page */
+.food-products-page {
+  background-color: #fff; /* Pure white for clarity */
+  color: #000; /* Black for text contrast */
+  min-height: 100vh; /* Ensure the page covers full viewport height */
+  width: 100%;
+  font-family: Arial, sans-serif; /* Consistent font */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding: 20px; /* Add padding for a cleaner layout */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px; /* Wider padding for desktop */
+  background-color: #EEC166; /* Light yellow */
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.menu-icon {
+  font-size: 28px; /* Larger for desktop */
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 28px; /* Larger font size for prominence */
+  font-weight: bold;
+  color: #000;
+}
+
+.cart-button {
+  background-color: transparent; 
+  color: #000;
+  padding: 10px 20px; /* Larger padding */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.cart-button:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Darker transparent black */
+
+}
+
+/* Product Header */
+.product-header {
+  text-align: center;
+  margin: 40px 0; /* More space for desktop readability */
+}
+
+.product-header h1 {
+  font-size: 36px; /* Larger for desktop emphasis */
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.product-filter {
+  padding: 10px 16px; /* Slightly larger for desktop */
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 30px; /* Extra spacing for breathing room */
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.product-filter:focus {
+  border-color: #EEC166; /* Highlight filter input on focus */
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns for desktop */
+  gap: 30px; /* Wider spacing between products */
+  padding: 20px 40px; /* Extra padding for larger screens */
+  text-align: center;
+}
+
+/* Product Card */
+.product-card {
+  background-color: #fff;
+  width: 100%;
+  max-width: 300px; /* Wider cards for desktop */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for card depth */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: auto; /* Center align within grid */
+}
+
+.product-card:hover {
+  background-color: rgba(238, 193, 102, 0.7); /* Soft yellow on hover */
+  transform: translateY(-5px); /* Lift on hover */
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 300px; /* Adjust image size */
+  height: 250px; /* Larger height for wider images */
+  object-fit: cover; /* Preserve aspect ratio */
+  border-radius: 5px 5px 0 0; /* Rounded top corners only */
+}
+
+.product-info {
+  margin-top: 15px;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Buy Now Button */
+.custom-buy-now-btn {
+  background-color: #EEC166;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 100%; /* Slightly wider */
+  padding: 12px 24px; /* Larger padding for desktop */
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.custom-buy-now-btn:hover {
+  background-color: #D6A746; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+  background-color: #EEC166;
+  height: 60px; /* Taller footer for desktop */
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 16px;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .product-header {
+    margin: 50px 0; 
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    padding: 40px 80px; 
+  }
+
+  .product-card {
+    max-width: 250px; /* Even larger cards */
+  }
+
+  .product-card img {
+    height: 200px; /* Increase image height */
+  }
+}
+
+}

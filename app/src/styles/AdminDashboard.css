@@ -1,0 +1,86 @@
+.admin-dashboard-container {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    background-image: url("../images/background.jpg"); /* Background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    position: relative; /* For layering child elements */
+    z-index: 1; /* Keep the container above other elements */
+    padding: 200px; /* Add padding around the content */
+  }
+  
+  .admin-dashboard-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 0;
+  }
+  
+  .admin-dashboard-container * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    padding-bottom: 20px;
+    animation: fadeIn 2s ease-in 0.3s;
+    color: white;
+    font-size: 4em;
+  }
+  
+  .ngo-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .ngo-card {
+    background-color: #ffffff;
+    height: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in 0.3s;
+  }
+  
+  .ngo-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .ngo-name {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .approve-button {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .approve-button:hover {
+    background-color: #45a049;
+  }
+  
+  .reject-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .reject-button:hover {
+    background-color: #d32f2f;
+  }

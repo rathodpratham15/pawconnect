@@ -1,0 +1,185 @@
+html, body {
+ overflow: auto;
+}
+
+/* General container styles */
+.diet-generator-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(238, 193, 102, 0.215);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 700px;
+  gap: 10px;
+  margin-top: 120px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Title styling */
+.diet-generator-container .title {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.diet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form step styling */
+.form-step {
+  display: flex;
+  flex-direction: column;
+}
+
+.diet-generator-container label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.diet-generator-container input,
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.diet-generator-container input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.diet-generator-container select {
+  cursor: pointer;
+}
+
+/* Multi-select styling */
+.diet-generator-container select[multiple] {
+  height: auto;
+  max-height: 150px;
+  resize: none;
+}
+
+/* Navigation button styling */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.diet-generator-container button {
+  padding: 12px 20px;
+  background-color: #eecb66; /* Yellow color */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Ensure buttons are uniform in size */
+  max-width: 200px; /* Limit max width for better alignment */
+  margin: 5px auto; /* Center buttons */
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.diet-generator-container button:hover {
+  background-color: #d7b759; /* Slightly darker yellow */
+}
+
+.diet-generator-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Button options styling */
+.button-options button.selected {
+  background-color: #4b5d70;
+  color: white;
+}
+
+.button-options button:focus {
+  outline: none;
+}
+
+/* Allergy section styling */
+.allergy-section {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.allergy-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.allergy-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.allergy-section li {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Diet plan card styling */
+.diet-plan-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* margin-top: 40px; */
+}
+
+.diet-plan-card h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.diet-plan-details {
+  font-size: 1rem;
+  color: #555;
+}
+
+.diet-plan-details p {
+  margin: 5px 0;
+}
+
+.diet-tips,
+.meal-plans {
+  margin-top: 20px;
+}
+
+.diet-tips ul,
+.meal-plans ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.diet-tips li,
+.meal-plans li {
+  font-size: 1rem;
+  color: #555;
+}
+
+.protein-intake {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  /* color: #007bff; */
+}

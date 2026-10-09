@@ -1,0 +1,88 @@
+/* Header container */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Spread items across the row */
+  padding: 10px 20px;
+  background-color: rgba(238, 193, 102, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  position: fixed; /* Sticks the header to the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures it stays above other content */
+  margin-bottom: 0; /* Remove margin for a flush fit */
+  height: 40px; /* Ensure there's enough space for buttons */
+}
+
+/* TODO: Need to remove this */
+/* Add margin to the body to avoid overlapping content */
+/* body {
+  padding-top: 60px; 
+  margin: 0;
+} */
+
+/* Hamburger Menu */
+.hamburger-menu {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px; /* Space between hamburger and title */
+}
+
+/* Website Name */
+.header-title {
+  display: flex;
+  align-items: center; /* Vertically center the paw icon and title */
+  gap: 10px;
+  flex-grow: 1; /* Take up available space between the menu and cart */
+  justify-content: center; /* Center the title */
+}
+
+.header-title h1 {
+  font-size: 20px;
+  color: black;
+  margin: 0;
+}
+
+.paw-icon {
+  font-size: 24px;
+}
+
+.cart-button:hover {
+  background-color: #e091b1;
+}
+
+.cart-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem; /* Adjust size of the icon */
+  color: #333; /* Icon color */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;  /* Stack items vertically on small screens */
+    align-items: flex-start;
+    height: auto;  /* Allow the header to grow based on content */
+  }
+
+  .hamburger-menu {
+    position: static; /* Reset position for smaller screens */
+    margin-right: 0;  /* Remove extra margin on small screens */
+    margin-bottom: 10px; /* Add some space between hamburger and title */
+  }
+
+  .cart-button {
+    position: static; /* Reset position for smaller screens */
+    margin-left: 0;    /* Remove margin on small screens */
+    margin-top: 10px;  /* Add space between cart button and title */
+  }
+}
