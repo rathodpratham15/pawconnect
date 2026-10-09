@@ -13,6 +13,9 @@ const initialize = (app) => {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
 
+    // Friendly answer for anyone opening the API address in a browser
+    app.get("/", (req, res) => res.status(200).json({ service: "PawConnect API", status: "ok" }));
+
     // Health check (used by hosting platforms)
     app.get("/health", (req, res) => res.status(200).json({ status: "ok" }));
 
