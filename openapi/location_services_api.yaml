@@ -1,0 +1,118 @@
+openapi: 3.0.0
+info:
+  title: Location Services API
+  description: API for managing and retrieving location information for various entities such as veterinarians, pet salons, pet therapy centers, and NGOs.
+  version: 1.0.0
+
+paths:
+  /locations/{entityType}/{entityId}:
+    get:
+      summary: Get location information for an entity
+      description: Retrieve the location details for a specified entity type and ID.
+      parameters:
+        - name: entityType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [veterinarian, pet_salon, pet_therapy, ngo]
+          description: The type of entity to retrieve location data for.
+        - name: entityId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique identifier for the entity.
+      responses:
+        '200':
+          description: Location details retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+        '404':
+          description: Entity not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid request parameters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  
+    put:
+      summary: Update location information for an entity
+      description: Update the location details for a specified entity type and ID.
+      parameters:
+        - name: entityType
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [veterinarian, pet_salon, pet_therapy, ngo]
+          description: The type of entity to update location data for.
+        - name: entityId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The unique identifier for the entity.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Location'
+            example:
+              latitude: 40.7128
+              longitude: -74.0060
+              address: "123 Pet Street, New York, NY 10001"
+      responses:
+        '200':
+          description: Location details updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+        '404':
+          description: Entity not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '400':
+          description: Invalid request payload.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Location:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: double
+          example: 40.7128
+        longitude:
+          type: number
+          format: double
+          example: -74.0060
+        address:
+          type: string
+          example: "123 Pet Street, New York, NY 10001"
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "Invalid request payload"
