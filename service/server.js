@@ -20,6 +20,11 @@ initialize(app);
 // Connect eagerly so problems show up at startup (requests also connect on demand)
 connectDB().catch((error) => console.error("Database connection error:", error.message));
 
-app.listen(port, () => {
-    console.log(`Listening to port ${port}`);
-});
+// On Vercel the platform runs the exported app itself; everywhere else we listen on a port
+if (!process.env.VERCEL) {
+    app.listen(port, () => {
+        console.log(`Listening to port ${port}`);
+    });
+}
+
+export default app;
