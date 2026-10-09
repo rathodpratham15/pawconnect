@@ -1,0 +1,27 @@
+.fundraiser-management {
+  width: 100vw;
+  height: auto;
+  background: linear-gradient(to right, #f9f6f2, #f7d488);
+  text-align: center;
+  padding: 20px;
+}
+
+.fundraiser-form {
+  background-color: #fff;
+  padding: 20px;
+  margin: auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ngo-select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+

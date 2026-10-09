@@ -1,0 +1,294 @@
+:root {
+  --primary-color: #EEC068; /* Hunyadi yellow */
+  --secondary-color: #F4A3AC; /* Salmon pink */
+  --background-color: #FFF8F0; /* Floral white */
+  --text-color: #BB7688; /* Puce */
+  --button-hover-color: #F2B8B0; /* Melon */
+  --card-bg-color: #FEE6B8; /* Peach */
+  --filter-bg-color: #D897B9; /* Amaranth pink */
+}
+
+
+
+/* Full Page Container */
+.pet-adoption-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: black;
+  line-height: 1.6;
+  overflow: hidden; 
+}
+
+/* Page Title */
+.page-title {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 40px;
+  color: black;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Layout */
+.content-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.filter-sidebar {
+  width: 300px;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background-image: url("../images/Adopt.png"); /* Replace with the path to your image */
+  background-size: cover; /* Ensures the image covers the entire sidebar */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  position: relative; /* For the overlay */
+}
+
+.filter-sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay */
+  z-index: 0; /* Keeps the overlay behind the content */
+}
+
+.filter-sidebar * {
+  position: relative; /* Ensures child elements are above the overlay */
+  z-index: 1;
+  color: rgb(0, 0, 0); /* Updates the text color to contrast with the background image */
+}
+
+.sidebar-title {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 1rem;
+  color: white;
+}
+
+.filter-select,
+.filter-range {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #D1D5DB;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+.age-display {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+/* Add Pet Button */
+.add-pet-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.add-pet-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+/* Add Pet Form */
+.add-pet-form {
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #ebe8e8, #c0b8b8);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.pet-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  width: 600px;
+}
+
+.form-group label {
+  width: 40%;
+  font-weight: bold;
+  text-align: right;
+}
+
+.form-group input {
+  width: 55%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.submit-button2 {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-button2:hover {
+  background-color: var(--button-hover-color);
+}
+
+.cancel-button {
+  background-color: var(--text-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #aa5a68;
+}
+
+/* Pets Grid */
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.no-pets-message {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin-top: 30px;
+}
+
+/* Pet Card */
+.pet-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+}
+
+.pet-card:hover {
+  transform: scale(1.05);
+}
+
+.pet-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.pet-info {
+  padding: 15px;
+}
+
+.pet-name {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.pet-details {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.adopt-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+  background-color: var(--button-hover-color);
+}

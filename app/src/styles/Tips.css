@@ -1,0 +1,241 @@
+.enhanced-tips-page {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  overflow-x: hidden;
+}
+  
+  /* Hero Section */
+  .hero-section {
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(135deg, #83a4d4, #b6fbff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  .hero-section p {
+    font-size: 1.5rem;
+    animation: fadeIn 2s ease-in 0.5s;
+  }
+  
+  /* Parallax Scrolling Effect */
+  .hero-section::after {
+    content: '';
+    background: url('path/to/background-image.jpg') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2);
+    perspective: 1px;
+  }
+  
+  /* Tips Container */
+  .tips-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards in a row */
+    gap: 2rem;
+    padding: 4rem;
+    background: linear-gradient(to bottom, #ffffff, #f3f4f7);
+  }
+  
+  .tip-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .tip-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+
+/* Tips Section Styles */
+/* Tips Section */
+.tips-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(30px); /* Start with slight vertical offset */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth scrolling effect */
+  }
+  
+  .tips-section.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Return to normal position */
+  }
+  
+  
+  /* Left Section */
+  .tips-left {
+    flex: 1; /* Take up equal space as the right section */
+    display: flex;
+    padding-left: 100px;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+  }
+  
+  .tips-image {
+    
+    width: 95%; /* Slightly reduce width to leave padding */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure proper scaling */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+  
+  /* Right Section */
+  .tips-right {
+    padding-top: 0px;
+    flex: 1; /* Take up equal space as the left section */
+    display: flex;
+    flex-direction: column; /* Stack heading, text, and button vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the left */
+  }
+  
+  .tips-right h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Tips Points */
+  .tips-points {
+    margin: 50px 0; /* Add spacing above and below the bullet list */
+    padding-left: 20px; /* Add proper indentation for bullets */
+    list-style-type: disc; /* Use simple disc bullets */
+    list-style-position: outside; /* Ensure bullets are outside the text block */
+    color: #666;
+  }
+  
+  .tips-points li {
+    color: #666;
+    margin-bottom: 10px; /* Add spacing between each bullet point */
+    font-size: 1.2rem; /* Adjust the font size for readability */
+    line-height: 1.5; /* Improve line spacing */
+    background: none; /* Remove any background styles */
+    border: none; /* Remove borders */
+    padding: 0; /* Remove any extra padding */
+    display: list-item; /* Ensure the bullet style is retained */
+  }
+  /* Donation Quote */
+  .tips-quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    padding-right: 100px;
+    color: #2e2d2d;
+    margin: 20px 0; /* Add spacing above and below the quote */
+    padding-left: 20px; /* Indent the quote for emphasis */
+    border-left: 3px solid #ce6e87; /* Add a colored border for styling */
+  }
+  
+  /* Left Section */
+  .tips-left2 {
+    padding-left: 100px;
+    flex: 1; /* Take up equal space as the left section */
+    display: flex;
+    flex-direction: column; /* Stack heading, text, and button vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start;
+  }
+  .tips-left2 h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  /* Tips Points */
+  .tips-points {
+    margin: 20px 0; /* Add spacing above and below the bullet list */
+    padding-left: 20px; /* Add proper indentation for bullets */
+    list-style-type: disc; /* Use simple disc bullets */
+    list-style-position: outside; /* Ensure bullets are outside the text block */
+    color: #666;
+  }
+  
+  .tips-points2 li {
+    color: #666;
+    margin-bottom: 10px; /* Add spacing between each bullet point */
+    font-size: 1.2rem; /* Adjust the font size for readability */
+    line-height: 1.5; /* Improve line spacing */
+    background: none; /* Remove any background styles */
+    border: none; /* Remove borders */
+    padding: 0; /* Remove any extra padding */
+    display: list-item; /* Ensure the bullet style is retained */
+  }
+
+  
+  /* Right Section */
+  .tips-right2 {
+    flex: 1; /* Take up equal space as the right section */
+    display: flex;
+    padding-left: 100px;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+  }
+  .tips-image2 {
+    
+    width: 95%; /* Slightly reduce width to leave padding */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure proper scaling */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+
+ 
+
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .tips-container {
+      grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+  
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-section p {
+      font-size: 1.2rem;
+    }
+  }
+  
