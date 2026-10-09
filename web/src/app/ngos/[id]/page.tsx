@@ -89,11 +89,11 @@ export default async function NgoDetailPage({ params }: PageProps) {
       '@type': 'PostalAddress',
       streetAddress: ngo.location?.address,
     },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: ngo.location?.latitude,
-      longitude: ngo.location?.longitude,
-    },
+    ...(typeof ngo.location?.latitude === 'number' && typeof ngo.location?.longitude === 'number'
+      ? { geo: { '@type': 'GeoCoordinates', latitude: ngo.location.latitude, longitude: ngo.location.longitude } }
+      : {}),
+    ...(ngo.websiteUrl ? { url: ngo.websiteUrl } : {}),
+    ...(ngo.logoUrl ? { logo: ngo.logoUrl } : {}),
   };
 
   return (
@@ -157,24 +157,34 @@ export default async function NgoDetailPage({ params }: PageProps) {
                   {ngo.name}
                 </h1>
                 <p style={{ color: '#8C7769', margin: '4px 0 0', fontWeight: 600, fontSize: '0.9rem' }}>
-                  Government Registration ID: {ngo.registrationId}
+                  {ngo.source === 'every_org' ? 'EIN (US tax ID)' : 'Government Registration ID'}: {ngo.registrationId}
                 </p>
               </div>
 
-              <div
-                style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '20px',
-                  backgroundColor: '#FAF0D6',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '2rem',
-                }}
-              >
-                🏛️
-              </div>
+              {ngo.logoUrl ? (
+                <img
+                  src={ngo.logoUrl}
+                  alt={`${ngo.name} logo`}
+                  width={64}
+                  height={64}
+                  style={{ width: '64px', height: '64px', borderRadius: '16px', objectFit: 'contain', backgroundColor: '#FFFFFF', border: '1px solid #EFE4CF' }}
+                />
+              ) : (
+                <div
+                  style={{
+                    width: '64px',
+                    height: '64px',
+                    borderRadius: '20px',
+                    backgroundColor: '#FAF0D6',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '2rem',
+                  }}
+                >
+                  🏛️
+                </div>
+              )}
             </div>
 
             {/* Mission / Description */}
@@ -217,14 +227,38 @@ export default async function NgoDetailPage({ params }: PageProps) {
                 <h3 style={{ fontSize: '0.85rem', color: '#8C7769', textTransform: 'uppercase', fontWeight: 700, margin: '0 0 0.5rem' }}>
                   📞 Direct Contact Information
                 </h3>
-                <p style={{ margin: 0, fontWeight: 600, color: '#2C1810', fontSize: '1.05rem' }}>
-                  {ngo.contactInfo}
+                <p style={{ margin: 0, fontWeight: 600, color: '#2C1810', fontSize: '1.05rem', wordBreak: 'break-word' }}>
+                  {/^https?:\/\//.test(ngo.contactInfo) ? (
+                    <a href={ngo.contactInfo} target="_blank" rel="noopener noreferrer" style={{ color: '#2C1810' }}>
+                      {ngo.contactInfo}
+                    </a>
+                  ) : (
+                    ngo.contactInfo
+                  )}
                 </p>
                 <p style={{ margin: '6px 0 0', fontSize: '0.8rem', color: '#8C7769' }}>
                   Direct shelter helpline for inquiries & emergency rescue
                 </p>
               </div>
             </div>
+
+            {/* Donate (imported NGOs): send people to the nonprofit's Every.org profile */}
+            {ngo.donateUrl && (
+              <div style={{ marginBottom: '2rem' }}>
+                <a
+                  href={ngo.donateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="paw-button-primary"
+                  style={{ padding: '12px 24px', fontSize: '1rem', display: 'inline-block' }}
+                >
+                  Donate via Every.org
+                </a>
+                <p style={{ color: '#8C7769', margin: '8px 0 0', fontSize: '0.8rem' }}>
+                  Listing information provided by Every.org.
+                </p>
+              </div>
+            )}
 
             {/* CTA */}
             <div
