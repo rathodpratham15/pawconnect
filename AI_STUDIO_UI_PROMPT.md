@@ -78,6 +78,7 @@ Errors are `{ "message": string }`.
 
 - `GET /breeds/dog` and `GET /breeds/cat` (public) → `string[]` of breed names. Use them for the breed select in the Add-pet form and the breed filter instead of hardcoding breeds. `GET /breeds/dog/image?breed=golden%20retriever` → `{breed,imageUrl|null}` (use as a photo preview/fallback when a pet has no `imageUrl`).
 - The database is pre-seeded with demo pets and food products, so design for realistic, populated lists (and still handle empty states).
+- NGOs may also come from Every.org: they have `source:"every_org"`, `location.latitude/longitude` can be `null`, and extra optional fields `websiteUrl`, `logoUrl`, `coverImageUrl`, `donateUrl`. Always show the NGO `logoUrl` when present, and for these NGOs show a "Donate via Every.org" button linking to `donateUrl` (opens in a new tab) with the credit "Listing information provided by Every.org". Never assume coordinates exist (no map pin or `toFixed` without a check).
 
 ## Deliverables
 A complete Next.js project (`package.json` with next@15, react@19, @mui/material, @mui/material-nextjs, axios, i18next, react-i18next, react-redux, @reduxjs/toolkit, @react-google-maps/api; `next.config.mjs` with the redirects; `tsconfig.json`), `.env.example` (`NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`, `NEXT_PUBLIC_SITE_URL`), and a short README. `npm run build` must pass with no type errors and without the API running (public data fetches must tolerate failure at build time). No mock data layers, no hardcoded localhost URLs outside the env default.
