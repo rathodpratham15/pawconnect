@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 import Chip from '@mui/material/Chip';
+import AdminAdoptionRequests from '../../components/AdminAdoptionRequests';
 
 export default function AdminPage() {
   const [pendingNgos, setPendingNgos] = useState<NGO[]>([]);
@@ -192,6 +193,8 @@ export default function AdminPage() {
           ))}
         </Box>
       )}
+
+      <AdminAdoptionRequests />
     </main>
   );
 }

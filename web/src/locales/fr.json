@@ -29,7 +29,8 @@
     "login": "Connexion",
     "signup": "Inscription",
     "logout": "Déconnexion",
-    "dashboard": "Tableau de bord"
+    "dashboard": "Tableau de bord",
+    "myAdoptions": "Mes demandes d'adoption"
   },
   "home": {
     "heroTitle": "Trouvez Votre Compagnon Pour Toujours",

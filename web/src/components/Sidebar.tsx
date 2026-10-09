@@ -248,6 +248,26 @@ export function Sidebar() {
           </div>
 
           <Link
+            href="/adoptions"
+            onClick={closeSidebar}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '10px 14px',
+              borderRadius: '10px',
+              textDecoration: 'none',
+              color: pathname === '/adoptions' ? '#2C1810' : '#4E3E34',
+              backgroundColor: pathname === '/adoptions' ? '#F6E5B8' : 'transparent',
+              fontWeight: 600,
+              fontSize: '0.95rem',
+            }}
+          >
+            <span>📋</span>
+            <span>{t('nav.myAdoptions')}</span>
+          </Link>
+
+          <Link
             href="/profile"
             onClick={closeSidebar}
             style={{
