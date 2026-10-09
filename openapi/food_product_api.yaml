@@ -1,0 +1,66 @@
+openapi: 3.0.0
+info:
+  title: PawConnect API - Food Product Catalog
+  version: 1.0.0
+  description: API for managing food products for pets.
+
+paths:
+  /foodproducts:
+    post:
+      summary: Add a new food product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FoodProduct'
+            example:
+              name: "Premium Dog Food"
+              brand: "Doggo Foods"
+              price: 3
+              description: "High-quality dog food with essential nutrients"
+              nutritionDetails: "Protein: 25%, Fat: 12%"
+      responses:
+        '201':
+          description: Food product added successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodProduct'
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    FoodProduct:
+      type: object
+      properties:
+        productId:
+          type: string
+          example: "prod123"
+        name:
+          type: string
+          example: "Premium Dog Food"
+        brand:
+          type: string
+          example: "Doggo Foods"
+        description:
+          type: string
+          example: "High-quality dog food with essential nutrients"
+        nutritionDetails:
+          type: string
+          example: "Protein: 25%, Fat: 12%"
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "Invalid request payload"

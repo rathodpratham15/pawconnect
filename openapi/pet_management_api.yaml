@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: PawConnect API - Pet Management
+  version: 1.0.0
+  description: API for managing pet profiles and details.
+
+paths:
+  /pets:
+    post:
+      summary: Register a new pet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+            example:
+              type: "Dog"
+              breed: "Labrador"
+              age: 3
+              size: "Large"
+              disabilityStatus: false
+              healthConcerns: ["Arthritis"]
+              shelterLocation: "Boston Animal Shelter"
+      responses:
+        '201':
+          description: Pet successfully registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /pets/{petId}:
+    get:
+      summary: Retrieve pet profile
+      parameters:
+        - in: path
+          name: petId
+          required: true
+          schema:
+            type: string
+            example: "abc123"
+      responses:
+        '200':
+          description: Pet profile retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+        '404':
+          description: Pet not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Pet:
+      type: object
+      required:
+        - type
+        - breed
+        - age
+        - size
+        - disabilityStatus
+        - shelterLocation
+      properties:
+        petId:
+          type: string
+          example: "abc123"
+        type:
+          type: string
+          example: "Dog"
+        breed:
+          type: string
+          example: "Labrador"
+        age:
+          type: integer
+          example: 3
+        size:
+          type: string
+          example: "Large"
+        disabilityStatus:
+          type: boolean
+          example: false
+        healthConcerns:
+          type: array
+          items:
+            type: string
+          example: ["Arthritis"]
+        shelterLocation:
+          type: string
+          example: "Boston Animal Shelter"
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "Invalid request payload"
