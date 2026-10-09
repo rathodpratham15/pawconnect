@@ -51,6 +51,20 @@ CREATE TABLE IF NOT EXISTS food_products (
     image             TEXT
 );
 
+CREATE TABLE IF NOT EXISTS adoption_requests (
+    id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    pet_id     UUID NOT NULL REFERENCES pets (id) ON DELETE CASCADE,
+    user_id    UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+    message    TEXT NOT NULL DEFAULT '',
+    status     TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected', 'withdrawn')),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+-- A user can only have one open request per pet
+CREATE UNIQUE INDEX IF NOT EXISTS adoption_requests_one_pending_idx
+    ON adoption_requests (pet_id, user_id) WHERE status = 'pending';
+CREATE INDEX IF NOT EXISTS adoption_requests_user_idx ON adoption_requests (user_id);
+
 CREATE TABLE IF NOT EXISTS fundraisers (
     id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     title            TEXT NOT NULL,
