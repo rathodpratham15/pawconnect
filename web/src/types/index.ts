@@ -66,3 +66,16 @@ export interface CartItem {
   product: FoodProduct;
   quantity: number;
 }
+
+export type AdoptionStatus = 'pending' | 'approved' | 'rejected' | 'withdrawn';
+
+export interface AdoptionRequest {
+  _id: string;
+  status: AdoptionStatus;
+  message: string;
+  createdAt: string;
+  updatedAt: string;
+  pet: Pick<Pet, '_id' | 'type' | 'breed' | 'shelterLocation'> & { name?: string; imageUrl?: string };
+  // Only present when an admin lists requests
+  user?: { _id: string; name: string; email: string; address?: string };
+}

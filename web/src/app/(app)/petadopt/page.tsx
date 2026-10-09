@@ -39,6 +39,7 @@ export default function PetAdoptPage() {
 
   // Adopt Toast
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [toastSeverity, setToastSeverity] = useState<'success' | 'error' | 'info'>('success');
 
   // Add Pet Dialog State
   const [openAddDialog, setOpenAddDialog] = useState(false);
@@ -117,8 +118,17 @@ export default function PetAdoptPage() {
     return true;
   });
 
-  const handleAdoptClick = (pet: Pet) => {
-    setToastMessage(`Adoption inquiry submitted for ${pet.name || 'this sweetheart'}! The shelter will reach out soon. 🐾`);
+  const handleAdoptClick = async (pet: Pet) => {
+    const petName = pet.name || 'this pet';
+    try {
+      await api.post(`/pets/${pet._id}/adopt`, {});
+      setToastSeverity('success');
+      setToastMessage(`Adoption request for ${petName} saved. You can follow its status under "My adoption requests". 🐾`);
+    } catch (err: any) {
+      // 409 = this user already has a pending request for the pet
+      setToastSeverity(err.response?.status === 409 ? 'info' : 'error');
+      setToastMessage(err.response?.data?.message || 'Could not send your adoption request. Please try again.');
+    }
   };
 
   const handleAddPetSubmit = async (e: React.FormEvent) => {
@@ -580,7 +590,7 @@ export default function PetAdoptPage() {
         onClose={() => setToastMessage(null)}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       >
-        <Alert onClose={() => setToastMessage(null)} severity="success" sx={{ width: '100%', fontWeight: 700 }}>
+        <Alert onClose={() => setToastMessage(null)} severity={toastSeverity} sx={{ width: '100%', fontWeight: 700 }}>
           {toastMessage}
         </Alert>
       </Snackbar>

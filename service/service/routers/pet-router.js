@@ -1,5 +1,6 @@
 import express from "express";
 import * as PetController from "../controllers/pet-controller.js";
+import * as AdoptionController from "../controllers/adoption-controller.js";
 import { authenticate, authorizeRoles } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -8,6 +9,9 @@ const router = express.Router();
 router.route("/")
     .get(PetController.getAllPets)
     .post(authenticate, PetController.post);
+
+// Ask to adopt a pet (any logged-in user)
+router.post("/:petId/adopt", authenticate, AdoptionController.requestAdoption);
 
 // Fetch, update or delete a pet by ID
 router.route("/:petId")

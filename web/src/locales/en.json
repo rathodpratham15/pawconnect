@@ -29,7 +29,8 @@
     "login": "Login",
     "signup": "Sign Up",
     "logout": "Logout",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "myAdoptions": "My adoption requests"
   },
   "home": {
     "heroTitle": "Find Your Forever Companion",
