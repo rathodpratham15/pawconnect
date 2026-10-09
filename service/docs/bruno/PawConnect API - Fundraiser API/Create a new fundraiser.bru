@@ -1,0 +1,20 @@
+meta {
+  name: Create a new fundraiser
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/fundraisers
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "",
+    "description": "",
+    "targetAmount": "",
+    "ngo": ""
+  }
+}

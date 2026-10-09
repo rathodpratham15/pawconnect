@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: PawConnect API - Diet Plan Management
+  version: 1.0.0
+  description: API for creating and managing diet plans for pets.
+
+paths:
+  /dietplans:
+    post:
+      summary: Create a diet plan for a pet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DietPlan'
+            example:
+              foodType: "Dry Food"
+              feedingSchedule: "Twice a day"
+              allergies: ["Gluten"]
+      responses:
+        '201':
+          description: Diet plan created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DietPlan'
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    DietPlan:
+      type: object
+      properties:
+        dietPlanId:
+          type: string
+          example: "diet123"
+        foodType:
+          type: string
+          example: "Dry Food"
+        feedingSchedule:
+          type: string
+          example: "Twice a day"
+        allergies:
+          type: array
+          items:
+            type: string
+          example: ["Gluten"]
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "Invalid request payload"

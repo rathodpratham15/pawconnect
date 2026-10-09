@@ -1,0 +1,199 @@
+openapi: 3.0.0
+info:
+  title: PawConnect API - User Management
+  version: 1.0.0
+  description: API for managing user profiles in PawConnect.
+
+paths:
+  /user:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+            example:
+              name: "John Doe"
+              email: "johndoe@example.com"
+              password: "password123"
+              address: "San Francisco, CA"
+      responses:
+        '201':
+          description: User successfully registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /user/{userId}:
+    get:
+      summary: Retrieve user profile
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+            example: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        '200':
+          description: User profile details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    put:
+      summary: Update user profile
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+            example: "123e4567-e89b-12d3-a456-426614174000"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Jane Doe"
+                email:
+                  type: string
+                  example: "janedoe@example.com"
+                password:
+                  type: string
+                  example: "newpassword456"
+                address:
+                  type: string
+                  example: "Los Angeles, CA"
+      responses:
+        '200':
+          description: User profile successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    delete:
+      summary: Delete user profile
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+            example: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        '204':
+          description: User successfully deleted
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: "johndoe@example.com"
+                password:
+                  type: string
+                  example: "password123"
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Login successful"
+                  userId:
+                    type: string
+                    example: "123e4567-e89b-12d3-a456-426614174000"
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        userId:
+          type: string
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "johndoe@example.com"
+        password:
+          type: string
+          example: "password123"
+        address:
+          type: string
+          example: "San Francisco, CA"
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "Invalid request payload"

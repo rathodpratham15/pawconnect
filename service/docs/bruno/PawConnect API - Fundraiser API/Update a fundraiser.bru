@@ -1,0 +1,23 @@
+meta {
+  name: Update a fundraiser
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/fundraisers/:id
+  body: json
+  auth: none
+}
+
+params:path {
+  id: 
+}
+
+body:json {
+  {
+    "title": "",
+    "description": "",
+    "targetAmount": ""
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Update pet profile
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/pets/:petId
+  body: json
+  auth: none
+}
+
+params:path {
+  petId: 
+}
