@@ -28,6 +28,9 @@ Notes: the first request after idle is a cold start (about 1–2 s); Neon accept
 ### Demo data
 Run `npm run seed` in `service/` once (with `DATABASE_URL` set, e.g. from the host's shell) to add demo pets and food products. It is safe to re-run. Breed lists and dog photos come from dog.ceo (free, cached, with offline fallbacks) via `GET /breeds/dog|cat`.
 
+### Real NGOs (optional, Every.org)
+Put `DATABASE_URL` and `EVERY_ORG_API_KEY` in `service/.env` (gitignored, never commit it) and run `npm run import:ngos -- --limit 60` from `service/`. It searches Every.org's animal-welfare nonprofits, fetches each profile (address, logo, website, donate link) and stores them as verified NGOs with source `every_org`. Re-running refreshes them and never changes a status you set (a rejected NGO stays rejected). Imported NGOs have no map coordinates; per Every.org's terms the UI shows their name and logo and sends donations to their Every.org profile.
+
 ## 3. Frontend (`web/`, Next.js) – Vercel
 - Root directory: `web` · Framework preset: Next.js (auto-detected) · no `vercel.json` needed.
 - Environment variables (see `web/.env.example`; `NEXT_PUBLIC_*` are baked in at build time, so redeploy after changing them):

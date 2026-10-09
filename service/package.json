@@ -10,7 +10,8 @@
     "start": "node server.js",
     "dev": "node --watch server.js",
     "seed": "node scripts/seed.js",
-    "migrate": "node scripts/migrate.js"
+    "migrate": "node scripts/migrate.js",
+    "import:ngos": "node scripts/import-ngos.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
