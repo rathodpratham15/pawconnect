@@ -1,0 +1,15 @@
+meta {
+  name: Delete pet profile
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/pets/:petId
+  body: none
+  auth: none
+}
+
+params:path {
+  petId: 
+}

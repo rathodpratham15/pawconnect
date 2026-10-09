@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  title: PawConnect API - Donation Management
+  version: 1.0.0
+  description: API for managing donations made by users to NGOs.
+
+paths:
+  /donations:
+    post:
+      summary: Make a donation to an NGO
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Donation'
+            example:
+              amount: 50.00
+              userId: "123e4567-e89b-12d3-a456-426614174000"
+              ngoId: "456e7897-f89a-12d3-a456-426614174321"
+              purpose: "General Support"
+      responses:
+        '201':
+          description: Donation successfully recorded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Donation'
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /donations/{donationId}:
+    get:
+      summary: Retrieve donation details
+      parameters:
+        - in: path
+          name: donationId
+          required: true
+          schema:
+            type: string
+            example: "789e0123-f89a-12d3-a456-426614174321"
+      responses:
+        '200':
+          description: Donation details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Donation'
+        '404':
+          description: Donation not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Donation:
+      type: object
+      properties:
+        donationId:
+          type: string
+          example: "789e0123-f89a-12d3-a456-426614174321"
+        amount:
+          type: number
+          format: double
+          example: 50.00
+        userId:
+          type: string
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        ngoId:
+          type: string
+          example: "456e7897-f89a-12d3-a456-426614174321"
+        date:
+          type: string
+          format: date
+          example: "2024-12-01"
+        purpose:
+          type: string
+          example: "General Support"
+    
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "Invalid request payload"

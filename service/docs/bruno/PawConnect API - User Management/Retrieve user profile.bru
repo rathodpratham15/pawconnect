@@ -1,0 +1,15 @@
+meta {
+  name: Retrieve user profile
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/user/:userId
+  body: none
+  auth: none
+}
+
+params:path {
+  userId: 
+}

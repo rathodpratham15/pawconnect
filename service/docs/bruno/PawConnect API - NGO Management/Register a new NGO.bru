@@ -1,0 +1,25 @@
+meta {
+  name: Register a new NGO
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/ngos
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ngoId": "",
+    "name": "",
+    "location": {
+      "latitude": "",
+      "longitude": "",
+      "address": ""
+    },
+    "contactInfo": "",
+    "description": ""
+  }
+}

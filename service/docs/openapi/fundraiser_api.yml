@@ -1,0 +1,155 @@
+openapi: 3.0.0
+info:
+  title: PawConnect API - Fundraiser API
+  description: API for managing fundraisers
+  version: 1.0.0
+servers:
+  - url: http://localhost:3002/api
+    description: Development server
+
+paths:
+  /fundraisers:
+    get:
+      summary: Get all fundraisers
+      description: Fetch a list of all fundraisers, including their details.
+      responses:
+        '200':
+          description: A list of fundraisers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Fundraiser'
+        '500':
+          description: Server error
+    post:
+      summary: Create a new fundraiser
+      description: Add a new fundraiser by an NGO.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FundraiserInput'
+      responses:
+        '201':
+          description: Fundraiser created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fundraiser'
+        '400':
+          description: Invalid input
+
+  /fundraisers/{id}:
+    get:
+      summary: Get a specific fundraiser
+      description: Retrieve the details of a specific fundraiser using its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the fundraiser
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Fundraiser details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fundraiser'
+        '404':
+          description: Fundraiser not found
+    patch:
+      summary: Update a fundraiser
+      description: Update the details of a specific fundraiser.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the fundraiser
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FundraiserUpdate'
+      responses:
+        '200':
+          description: Fundraiser updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fundraiser'
+        '400':
+          description: Invalid input
+        '404':
+          description: Fundraiser not found
+    delete:
+      summary: Delete a fundraiser
+      description: Remove a specific fundraiser using its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the fundraiser
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Fundraiser deleted successfully
+        '404':
+          description: Fundraiser not found
+
+components:
+  schemas:
+    Fundraiser:
+      type: object
+      properties:
+        _id:
+          type: string
+        title:
+          type: string
+          description: The title of the fundraiser
+        description:
+          type: string
+          description: A brief description of the fundraiser
+        targetAmount:
+          type: number
+          description: The target amount for the fundraiser
+        collectedAmount:
+          type: number
+          description: The amount collected so far
+        ngo:
+          type: string
+          description: The ID of the NGO associated with the fundraiser
+    FundraiserInput:
+      type: object
+      required:
+        - title
+        - description
+        - targetAmount
+        - ngo
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        targetAmount:
+          type: number
+        ngo:
+          type: string
+          description: ID of the NGO
+    FundraiserUpdate:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        targetAmount:
+          type: number

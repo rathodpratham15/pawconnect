@@ -1,0 +1,18 @@
+meta {
+  name: User login
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "",
+    "password": ""
+  }
+}

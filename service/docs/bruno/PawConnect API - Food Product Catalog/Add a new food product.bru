@@ -1,0 +1,21 @@
+meta {
+  name: Add a new food product
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3002/foodProduct
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name":"Raw Blends Dog Food",
+    "brand":"Dog Food",
+    "price":29.99,
+    "description":"new",
+    "nutritionDetails":"new"
+  }
+}
