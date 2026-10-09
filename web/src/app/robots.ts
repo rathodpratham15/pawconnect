@@ -23,6 +23,7 @@ export default function robots(): MetadataRoute.Robots {
         '/cart',
         '/petcare',
         '/profile',
+        '/adoptions',
         '/geolocation',
         '/clipboard',
         '/network',
