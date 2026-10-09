@@ -1,0 +1,111 @@
+:root {
+  --primary: #ECC067;
+  --primary-dark: #D4A74E;
+  --primary-light: #F8E5B8;
+  --primary-contrast: #2C1810;
+  --text-primary: #2C1810;
+  --text-secondary: #6E5D53;
+  --bg-main: #FDFBF7;
+  --bg-card: #FFFFFF;
+  --bg-accent: #FBF4E6;
+  --border-color: #EFE6D6;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(44, 24, 16, 0.04);
+  --shadow-md: 0 4px 16px rgba(44, 24, 16, 0.08);
+  --shadow-lg: 0 8px 30px rgba(44, 24, 16, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+.paw-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paw-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.paw-button-primary {
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.paw-button-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.paw-button-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--primary);
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 8px 18px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.paw-button-secondary:hover {
+  background-color: var(--primary-light);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #F0E8D9 25%, #FAF5EC 50%, #F0E8D9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
