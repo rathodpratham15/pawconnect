@@ -1,0 +1,297 @@
+{
+    "languageSwitcher": {
+        "english": "Anglais",
+        "french": "Français"
+    },
+    "header": {
+        "menu": "Menu",
+        "title": "Paw Connect",
+        "cart": "Panier"
+    },
+    "sidebar": {
+        "foodProducts": "Produits alimentaires",
+        "dietGenerator": "Générateur de régimes",
+        "profile": "Profil",
+        "closeSidebar": "Fermer le menu",
+        "geolocation": "Géolocalisation",
+        "clipboard": "Presse-papiers",
+        "file": "Fichier",
+        "network": "Réseau",
+        "bluetooth": "Bluetooth"
+    },
+    "profile": {
+        "updateProfile": "Mettre à jour le profil",
+        "name": "Nom",
+        "email": "E-mail",
+        "address": "Adresse",
+        "updateButton": "Mettre à jour le profil",
+        "deleteButton": "Supprimer le compte",
+        "confirmDelete": "Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.",
+        "successUpdate": "Profil mis à jour avec succès !",
+        "successDelete": "Compte supprimé avec succès !",
+        "errorFetchingData": "Erreur lors de la récupération des données de l'utilisateur",
+        "errorUpdatingProfile": "Erreur lors de la mise à jour du profil",
+        "errorDeletingAccount": "Erreur lors de la suppression du compte",
+        "requiredField": "Ce champ est obligatoire"
+    },
+    "loginPage": {
+        "title": "Connexion / Se connecter",
+        "emailLabel": "Email",
+        "passwordLabel": "Mot de passe",
+        "loginButton": "Se connecter",
+        "loginSuccess": "Connexion réussie",
+        "loginFailed": "Échec de la connexion. Veuillez réessayer.",
+        "signupPrompt": "Vous n'avez pas de compte ? Inscription"
+    },
+    "signUpPage": {
+        "title": "Inscription",
+        "nameLabel": "Nom",
+        "emailLabel": "Email",
+        "passwordLabel": "Mot de passe",
+        "addressLabel": "Adresse",
+        "roleLabel": "Rôle",
+        "userRole": "Utilisateur",
+        "ngoRole": "ONG",
+        "registerButton": "S'inscrire",
+        "registerSuccess": "Inscription réussie!",
+        "registerFailed": "Une erreur est survenue lors de l'inscription.",
+        "loginPrompt": "Vous avez déjà un compte ? Connectez-vous ici"
+    },
+    "ngoManagement": {
+        "title": "Gestion des ONG",
+        "addNgo": "Ajouter une ONG",
+        "addNgoFormTitle": "Ajouter une ONG",
+        "ngoName": "Nom de l'ONG",
+        "registrationId": "ID d'enregistrement",
+        "address": "Adresse",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "detectLocation": "Détecter la position",
+        "countryCode": "Code du pays",
+        "contactInfo": "Informations de contact",
+        "description": "Description",
+        "submitButton": "Soumettre",
+        "ngosList": "Liste des ONG",
+        "status": "Statut",
+        "pending": "En attente",
+        "approved": "Approuvé",
+        "rejected": "Rejeté"
+    },
+    "adminDashboard": {
+        "title": "Tableau de bord Admin",
+        "approve": "Approuver",
+        "reject": "Rejeter",
+        "registrationId": "ID d'enregistrement",
+        "address": "Adresse",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "contact": "Contact",
+        "description": "Description",
+        "ngoApproved": "ONG Approuvée!",
+        "ngoRejected": "ONG Rejetée!",
+        "errorFetchingNGOs": "Erreur lors de la récupération des ONG"
+    },
+    "geolocationHandler": {
+        "title": "Centre de localisation",
+        "getMyLocation": "Obtenir ma position",
+        "saveLocation": "Enregistrer l'emplacement dans un fichier",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "locationNotAvailable": "Données de localisation non disponibles",
+        "locationError": "Erreur lors de l'obtention de la position : ",
+        "geolocationNotSupported": "La géolocalisation n'est pas prise en charge par ce navigateur.",
+        "loading": "Chargement...",
+        "locationSaved": "Emplacement enregistré avec succès !",
+        "saveLocationError": "Erreur lors de l'enregistrement de l'emplacement : "
+    },
+    "clipboardHandler": {
+        "title": "Gestionnaire de Presse-papiers",
+        "clipboardText": "Texte du Presse-papiers",
+        "copyToClipboard": "Copier dans le Presse-papiers",
+        "readFromClipboard": "Lire depuis le Presse-papiers",
+        "successReadClipboard": "Contenu du presse-papiers lu avec succès !",
+        "successWriteClipboard": "Texte copié dans le presse-papiers avec succès !",
+        "errorReadClipboard": "Échec de la lecture du presse-papiers !",
+        "errorWriteClipboard": "Échec de la copie dans le presse-papiers !"
+    },
+    "enhancedTipsPage": {
+        "title": "Conseils Essentiels pour le Soin des Animaux",
+        "intro": "Prenez soin de vos amis à quatre pattes avec ces conseils d'experts",
+        "sections": {
+        "hygiene": {
+            "title": "Hygiène des Animaux",
+            "points": [
+            "Brossez régulièrement votre animal pour maintenir son pelage propre et prévenir les nœuds ou les problèmes de peau.",
+            "Baigner votre animal au besoin en utilisant des shampoings adaptés aux animaux.",
+            "Gardez son espace de vie propre, y compris la literie, les bacs à litière et les zones de repas.",
+            "Coupez les griffes, nettoyez les oreilles et brossez les dents pour prévenir les infections et maintenir une hygiène générale."
+            ],
+            "quote": "Sauver un animal ne changera pas le monde, mais pour cet animal, le monde changera à jamais."
+        },
+        "food": {
+            "title": "Nourriture pour Animaux",
+            "points": [
+            "Fournissez une alimentation équilibrée adaptée à l'espèce, à l'âge et à la race de votre animal.",
+            "Évitez de nourrir votre animal avec des aliments humains pouvant être toxiques, comme le chocolat, les oignons ou les raisins.",
+            "Assurez-vous que votre animal ait constamment accès à de l'eau propre et fraîche.",
+            "Utilisez le contrôle des portions pour éviter la suralimentation et l'obésité."
+            ],
+            "quote": "Sauver un animal ne changera pas le monde, mais pour cet animal, le monde changera à jamais."
+        },
+        "exercise": {
+            "title": "Exercice et Stimulation Mentale",
+            "points": [
+            "Assurez-vous que votre animal fasse des promenades quotidiennes, du temps de jeu ou des activités pour rester actif.",
+            "Utilisez des jouets interactifs ou des puzzles pour stimuler son esprit et réduire l'ennui.",
+            "Passez du temps de qualité avec votre animal pour renforcer vos liens et réduire le stress."
+            ],
+            "quote": "Sauver un animal ne changera pas le monde, mais pour cet animal, le monde changera à jamais."
+        },
+        "safety": {
+            "title": "Sécurité des Animaux",
+            "points": [
+            "Utilisez des colliers avec des étiquettes d'identification et micropucez votre animal pour plus de sécurité.",
+            "Gardez les produits chimiques, objets tranchants et plantes toxiques hors de portée.",
+            "Offrez un espace confortable et sécurisé à votre animal pour se détendre."
+            ],
+            "quote": "Sauver un animal ne changera pas le monde, mais pour cet animal, le monde changera à jamais."
+        }
+        }
+    },
+    "homePage": {
+        "mainText": "Trouvez votre animal",
+        "mainDescription": "Dans divers refuges, de nombreux animaux vous attendent, espérant une famille aimante et une maison chaleureuse—aidez-les à trouver quelqu'un qui les aimera !",
+        "adoptButton": "Adopter maintenant",
+        "donation": "Donations",
+        "donationDescription": "Votre don peut sauver la vie de nombreux chiens et chats dans le besoin. Il fournit de la nourriture, des soins médicaux et un abri, tout en leur donnant l'espoir d'une maison aimante. Chaque contribution les rapproche de la sécurité, du bonheur et d'une famille à appeler leur propre. Faites la différence aujourd'hui !",
+        "donationPoint1": "Votre don fournit de la nourriture et un abri aux animaux dans le besoin.",
+        "donationPoint2": "Il aide à financer les traitements médicaux pour les animaux blessés.",
+        "donationPoint3": "Vous contribuez aux programmes d'adoption et aux actions communautaires.",
+        "donationQuote": "Sauver un animal ne changera pas le monde, mais pour cet animal, le monde changera à jamais.",
+        "donateNow": "Donner maintenant",
+        "adoptPet": "Adopter un animal",
+        "searchNgo": "Chercher une ONG",
+        "petCare": "Soins pour animaux",
+        "faqTitle": "Questions fréquemment posées",
+        "faqNavPrev": "<",
+        "faqNavNext": ">",
+        "feedbackTitle": "Retour d'information",
+        "feedbackDescription": "Nous apprécions vos retours. Dites-nous comment nous nous en sortons !",
+        "namePlaceholder": "Entrez votre nom",
+        "emailPlaceholder": "Entrez votre email",
+        "feedbackPlaceholder": "Entrez vos commentaires",
+        "submitButton": "Soumettre",
+        "contactUs": "Contactez-nous",
+        "address": "123 Pet Street, Animal City, AC 12345",
+        "phone": "+1 (800) 555-1234",
+        "email": "info@petconnect.com",
+        "workingHours": "Lun-Ven, 9h00 - 18h00",
+        "faq1Question": "1. Comment mon don aide-t-il les animaux ?",
+        "faq1Answer": "Votre don fournit de la nourriture, un abri, des soins médicaux et soutient les programmes de sauvetage et d'adoption.",
+        "faq2Question": "2. Puis-je choisir l'utilisation de mon don ?",
+        "faq2Answer": "De nombreuses organisations vous permettent de spécifier si votre don va aux soins médicaux, à la nourriture ou aux programmes de stérilisation.",
+        "faq3Question": "3. Les dons sont-ils déductibles des impôts ?",
+        "faq3Answer": "Oui, la plupart des organisations de bienfaisance pour les animaux fournissent des reçus pour les déductions fiscales.",
+        "faq4Question": "4. Puis-je donner des objets au lieu d'argent ?",
+        "faq4Answer": "Absolument ! Les refuges acceptent souvent de la nourriture, des jouets, des couvertures et d'autres fournitures pour animaux.",
+        "faq5Question": "5. Comment savoir si mon don fait une différence ?",
+        "faq5Answer": "Les organisations réputées fournissent des mises à jour, des rapports et des histoires de succès pour montrer l'impact de votre soutien.",
+        "faq6Question": "6. Puis-je mettre en place des dons récurrents ?",
+        "faq6Answer": "Oui, la plupart des refuges et organisations permettent de configurer des dons mensuels ou annuels pour un soutien constant."
+    },
+    "fileHandler": {
+        "saveButton": "Enregistrer le fichier",
+        "openButton": "Ouvrir le fichier",
+        "textareaPlaceholder": "Entrez votre texte ici"
+    },
+    "networkStatus": {
+        "header": "API d'informations sur le réseau",
+        "connectionType": "Type de connexion",
+        "status": "Statut",
+        "online": "En ligne",
+        "offline": "Hors ligne",
+        "unknown": "Inconnu"
+    },
+    "bluetoothHandler": {
+        "header": "Gestionnaire Bluetooth (API Fugu)",
+        "connectButton": "Se connecter au Bluetooth",
+        "connected": "Connecté à : {{deviceName}}",
+        "batteryLevel": "Niveau de la batterie : {{batteryLevel}}%",
+        "error": "Erreur de connexion Bluetooth"
+    },
+    "dietGenerator": {
+        "title": "Générateur de Régime pour Animaux",
+        "petName": "Nom de l'animal",
+        "enterPetName": "Entrez le nom de votre animal",
+        "petGender": "Genre de l'animal",
+        "male": "Mâle",
+        "female": "Femme",
+        "petAge": "Âge de l'animal (en années)",
+        "enterPetAge": "Entrez l'âge de votre animal",
+        "petWeight": "Poids de l'animal (en kg)",
+        "enterPetWeight": "Entrez le poids de votre animal",
+        "petBreed": "Race de l'animal",
+        "enterPetBreed": "Entrez la race de votre animal",
+        "petSize": "Taille de l'animal",
+        "small": "Petit",
+        "medium": "Moyenne",
+        "large": "Grand",
+        "foodType": "Type de nourriture",
+        "dryFood": "Nourriture sèche",
+        "wetFood": "Nourriture humide",
+        "rawFood": "Nourriture crue",
+        "grainFreeFood": "Nourriture sans céréales",
+        "allergies": "Allergies",
+        "feedingSchedule": "Horaire d'alimentation",
+        "feedingSchedulePlaceholder": "Par exemple, Deux fois par jour",
+        "waterTip": "Assurez-vous toujours que votre animal ait accès à de l'eau propre et fraîche.",
+        "smallPetTip": "Les petits animaux bénéficient souvent de repas plus fréquents et plus petits.",
+        "mediumPetTip": "Les animaux de taille moyenne ont besoin d'un mélange équilibré de protéines, de glucides et de graisses saines.",
+        "largePetTip": "Les grands animaux peuvent avoir besoin de suppléments articulaires pour soutenir leurs os.",
+        "glutenFreeTip": "Envisagez des régimes sans gluten avec des céréales complètes comme le quinoa.",
+        "chickenFreeTip": "Passez à des protéines alternatives comme le poisson ou l'agneau.",
+        "proteinIntake": "Apport recommandé en protéines",
+        "gramsPerDay": "grammes par jour",
+        "generatedPlan": "Plan alimentaire généré pour",
+        "gender": "Genre",
+        "age": "Âge",
+        "years": "années",
+        "weight": "Poids",
+        "breed": "Race",
+        "size": "Taille",
+        "none": "Aucun",
+        "dietTips": "Conseils alimentaires utiles",
+        "mealPlans": "Plans de repas suggérés",
+        "submit": "Soumettre",
+        "next": "Suivant",
+        "back": "Retour",
+        "dryFoodMeal1": "Nourriture sèche avec poulet et patates douces (à servir avec de l'eau).",
+        "dryFoodMeal2": "Nourriture sèche avec saumon et pois (à servir avec de l'eau).",
+        "wetFoodMeal1": "Nourriture humide avec dinde et carottes (à servir avec de l'eau).",
+        "wetFoodMeal2": "Nourriture humide avec agneau et haricots verts (à servir avec de l'eau).",
+        "rawFoodMeal1": "Poulet cru et riz (à servir avec de l'eau).",
+        "rawFoodMeal2": "Saumon cru et carottes (à servir avec de l'eau).",
+        "grainFreeFoodMeal1": "Nourriture sans céréales avec dinde et citrouille (à servir avec de l'eau).",
+        "grainFreeFoodMeal2": "Nourriture sans céréales avec bœuf et patates douces (à servir avec de l'eau)."
+    },
+    "searchNearMe": {
+        "ngoheader": "ONG Animaux près de chez vous",
+        "salonheader": "Salons pour Animaux près de chez vous",
+        "vetheader": "Vétérinaires près de chez vous",
+        "therapyheader": "Thérapie pour Animaux près de chez vous",
+        "locationAccessError": "L'accès à la localisation est requis pour afficher les lieux à proximité",
+        "fetchError": "Échec de la récupération des lieux à proximité",
+        "navigateButton": "Naviguer"
+    },
+    "petCare": {
+        "title": "Soins pour Animaux",
+        "description": "Les soins pour animaux sont essentiels pour garantir que les animaux vivent une vie heureuse et en bonne santé grâce à une nutrition appropriée, des soins médicaux, de l'exercice et de l'amour.",
+        "discoverServices": "Découvrez les services pour animaux",
+        "vet": "Vétérinaire",
+        "petSalon": "Salon pour Animaux",
+        "foodProducts": "Produits Alimentaires",
+        "dietGenerator": "Générateur de Régime",
+        "petTherapy": "Thérapie pour Animaux"
+    }
+  }
+  

@@ -1,0 +1,15 @@
+meta {
+  name: Retrieve NGO profile
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/ngos/:ngoId
+  body: none
+  auth: none
+}
+
+params:path {
+  ngoId: 
+}

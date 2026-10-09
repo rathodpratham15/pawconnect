@@ -1,0 +1,297 @@
+{
+    "languageSwitcher": {
+        "english": "English",
+        "french": "Français"
+    },    
+    "header": {
+        "menu": "Menu",
+        "title": "Paw Connect",
+        "cart": "Cart"
+    },
+    "sidebar": {
+        "foodProducts": "Food Products",
+        "dietGenerator": "Diet Generator",
+        "profile": "Profile",
+        "closeSidebar": "Close Sidebar",
+        "geolocation": "Geolocation",
+        "clipboard": "Clipboard",
+        "file": "File",
+        "network": "Network",
+        "bluetooth": "Bluetooth"
+    },
+    "profile": {
+        "updateProfile": "Update Profile",
+        "name": "Name",
+        "email": "Email",
+        "address": "Address",
+        "updateButton": "Update Profile",
+        "deleteButton": "Delete Account",
+        "confirmDelete": "Are you sure you want to delete your account? This action cannot be undone.",
+        "successUpdate": "Profile updated successfully!",
+        "successDelete": "Account deleted successfully!",
+        "errorFetchingData": "Error fetching user data",
+        "errorUpdatingProfile": "Error updating profile",
+        "errorDeletingAccount": "Error deleting account",
+        "requiredField": "This field is required"
+    },
+    "loginPage": {
+        "title": "Sign-in / Login",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "loginButton": "Login",
+        "loginSuccess": "Login Successful",
+        "loginFailed": "Login failed. Please try again.",
+        "signupPrompt": "Don't have an account? Sign-up"
+    },
+    "signUpPage": {
+        "title": "Sign-Up",
+        "nameLabel": "Name",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "addressLabel": "Address",
+        "roleLabel": "Role",
+        "userRole": "User",
+        "ngoRole": "NGO",
+        "registerButton": "Register",
+        "registerSuccess": "Registration Successful!",
+        "registerFailed": "Error occurred during registration.",
+        "loginPrompt": "Already have an account? Login here"
+    },
+    "ngoManagement": {
+        "title": "NGO Management",
+        "addNgo": "Add NGO",
+        "addNgoFormTitle": "Add NGO",
+        "ngoName": "NGO Name",
+        "registrationId": "Registration ID",
+        "address": "Address",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "detectLocation": "Detect Location",
+        "countryCode": "Country Code",
+        "contactInfo": "Contact Info",
+        "description": "Description",
+        "submitButton": "Submit",
+        "ngosList": "NGOs List",
+        "status": "Status",
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected"
+    },
+    "adminDashboard": {
+        "title": "Admin Dashboard",
+        "approve": "Approve",
+        "reject": "Reject",
+        "registrationId": "Registration ID",
+        "address": "Address",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "contact": "Contact",
+        "description": "Description",
+        "ngoApproved": "NGO Approved!",
+        "ngoRejected": "NGO Rejected!",
+        "errorFetchingNGOs": "Error fetching NGOs"
+    },
+    "geolocationHandler": {
+        "title": "Location Hub",
+        "getMyLocation": "Get My Location",
+        "saveLocation": "Save Location to File",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "locationNotAvailable": "Location data not available",
+        "locationError": "Error getting location: ",
+        "geolocationNotSupported": "Geolocation is not supported in this browser.",
+        "loading": "Loading...",
+        "locationSaved": "Location saved successfully!",
+        "saveLocationError": "Error saving location: "
+    },
+    "clipboardHandler": {
+        "title": "Clipboard Manager",
+        "clipboardText": "Clipboard Text",
+        "copyToClipboard": "Copy to Clipboard",
+        "readFromClipboard": "Read from Clipboard",
+        "successReadClipboard": "Clipboard content read successfully!",
+        "successWriteClipboard": "Text copied to clipboard successfully!",
+        "errorReadClipboard": "Failed to read clipboard!",
+        "errorWriteClipboard": "Failed to copy to clipboard!"
+    },
+    "enhancedTipsPage": {
+        "title": "Essential Tips for Pet Care",
+        "intro": "Take care of your furry friends with these expert tips",
+        "sections": {
+        "hygiene": {
+            "title": "Pet Hygiene",
+            "points": [
+            "Regularly groom your pet to maintain clean fur and prevent matting or skin issues.",
+            "Bathe your pet as needed using pet-safe shampoos.",
+            "Keep their living space clean, including bedding, litter boxes, and feeding areas.",
+            "Trim nails, clean ears, and brush teeth to prevent infections and maintain overall hygiene."
+            ],
+            "quote": "Saving one animal won’t change the world, but for that one animal, the world will change forever."
+        },
+        "food": {
+            "title": "Pet Food",
+            "points": [
+            "Provide a balanced diet suited to your pet's species, age, and breed.",
+            "Avoid feeding human food that can be toxic, such as chocolate, onions, or grapes.",
+            "Ensure constant access to clean, fresh water.",
+            "Use portion control to prevent overfeeding and obesity."
+            ],
+            "quote": "Saving one animal won’t change the world, but for that one animal, the world will change forever."
+        },
+        "exercise": {
+            "title": "Exercise and Mental Stimulation",
+            "points": [
+            "Ensure daily walks, playtime, or activities to keep your pet physically active.",
+            "Use interactive toys or puzzles to engage their minds and reduce boredom.",
+            "Spend quality time with your pet to strengthen your bond and reduce stress."
+            ],
+            "quote": "Saving one animal won’t change the world, but for that one animal, the world will change forever."
+        },
+        "safety": {
+            "title": "Pet Safety",
+            "points": [
+            "Use collars with identification tags and microchip your pet for added safety.",
+            "Keep harmful chemicals, sharp objects, and toxic plants out of reach.",
+            "Provide a comfortable, safe space for your pet to relax."
+            ],
+            "quote": "Saving one animal won’t change the world, but for that one animal, the world will change forever."
+        }
+        }
+    },
+    "homePage": {
+        "mainText": "Find your pet",
+        "mainDescription": "In various shelters, many pets are waiting just for you, hoping for a loving family and a cozy home—please help them find someone who will love them!",
+        "adoptButton": "Let's Adopt",
+        "donation": "Donation",
+        "donationDescription": "Your donation can save the lives of countless dogs and cats in need. It provides food, medical care, and shelter while giving them hope for a loving home. Every contribution brings them one step closer to safety, happiness, and a family to call their own. Make a difference today!",
+        "donationPoint1": "Your donation provides food and shelter to animals in need.",
+        "donationPoint2": "It helps in funding medical treatments for injured pets.",
+        "donationPoint3": "You contribute to adoption programs and community outreach.",
+        "donationQuote": "Saving one animal won’t change the world, but for that one animal, the world will change forever.",
+        "donateNow": "Donate Now",
+        "adoptPet": "Adopt a Pet",
+        "searchNgo": "Search for NGO",
+        "petCare": "Pet Care",
+        "faqTitle": "Frequently Asked Questions",
+        "faqNavPrev": "<",
+        "faqNavNext": ">",
+        "feedbackTitle": "Feedback",
+        "feedbackDescription": "We value your feedback. Let us know how we are doing!",
+        "namePlaceholder": "Enter your name",
+        "emailPlaceholder": "Enter your email",
+        "feedbackPlaceholder": "Enter your feedback",
+        "submitButton": "Submit",
+        "contactUs": "Contact Us",
+        "address": "123 Pet Street, Animal City, AC 12345",
+        "phone": "+1 (800) 555-1234",
+        "email": "info@petconnect.com",
+        "workingHours": "Mon-Fri, 9:00 AM - 6:00 PM",
+        "faq1Question": "1. How does my donation help pets?",
+        "faq1Answer": "Your donation provides food, shelter, medical care, and support for rescue and adoption programs.",
+        "faq2Question": "2. Can I choose how my donation is used?",
+        "faq2Answer": "Many organizations allow you to specify whether your donation goes toward medical care, food, or spay/neuter programs.",
+        "faq3Question": "3. Are donations tax-deductible?",
+        "faq3Answer": "Yes, most registered animal welfare organizations provide receipts for tax deductions.",
+        "faq4Question": "4. Can I donate items instead of money?",
+        "faq4Answer": "Absolutely! Shelters often accept food, toys, blankets, and other pet supplies.",
+        "faq5Question": "5. How do I know my donation is making a difference?",
+        "faq5Answer": "Reputable organizations provide updates, reports, and success stories to show the impact of your support.",
+        "faq6Question": "6. Can I set up recurring donations?",
+        "faq6Answer": "Yes, most shelters and organizations allow you to set up monthly or yearly donations for consistent support."
+    },
+    "fileHandler": {
+        "saveButton": "Save File",
+        "openButton": "Open File",
+        "textareaPlaceholder": "Enter your text here"
+    },
+    "networkStatus": {
+        "header": "Network Information API",
+        "connectionType": "Connection Type",
+        "status": "Status",
+        "online": "Online",
+        "offline": "Offline",
+        "unknown": "Unknown"
+    },
+    "bluetoothHandler": {
+        "header": "Bluetooth Handler (Fugu API)",
+        "connectButton": "Connect to Bluetooth",
+        "connected": "Connected to: {{deviceName}}",
+        "batteryLevel": "Battery Level: {{batteryLevel}}%",
+        "error": "Bluetooth connection error"
+    },
+    "dietGenerator": {
+        "title": "Pet Diet Generator",
+        "petName": "Pet Name",
+        "enterPetName": "Enter your pet's name",
+        "petGender": "Pet Gender",
+        "male": "Male",
+        "female": "Female",
+        "petAge": "Pet Age (in years)",
+        "enterPetAge": "Enter your pet's age",
+        "petWeight": "Pet Weight (in kg)",
+        "enterPetWeight": "Enter your pet's weight",
+        "petBreed": "Pet Breed",
+        "enterPetBreed": "Enter your pet's breed",
+        "petSize": "Pet Size",
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large",
+        "foodType": "Food Type",
+        "dryFood": "Dry Food",
+        "wetFood": "Wet Food",
+        "rawFood": "Raw Food",
+        "grainFreeFood": "Grain-Free Food",
+        "allergies": "Allergies",
+        "feedingSchedule": "Feeding Schedule",
+        "feedingSchedulePlaceholder": "E.g., Twice a day",
+        "waterTip": "Always ensure your pet has access to clean, fresh water.",
+        "smallPetTip": "Small pets often benefit from more frequent, smaller meals.",
+        "mediumPetTip": "Medium-sized pets require a balanced mix of protein, carbs, and healthy fats.",
+        "largePetTip": "Large pets may need joint supplements to support their bones.",
+        "glutenFreeTip": "Consider gluten-free diets with whole grains like quinoa.",
+        "chickenFreeTip": "Switch to alternative proteins like fish or lamb.",
+        "proteinIntake": "Recommended protein intake",
+        "gramsPerDay": "grams per day",
+        "generatedPlan": "Generated Diet Plan for",
+        "gender": "Gender",
+        "age": "Age",
+        "years": "years",
+        "weight": "Weight",
+        "breed": "Breed",
+        "size": "Size",
+        "none": "None",
+        "dietTips": "Helpful Diet Tips",
+        "mealPlans": "Suggested Meal Plans",
+        "submit": "Submit",
+        "next": "Next",
+        "back": "Back",
+        "dryFoodMeal1": "Dry Food with chicken and sweet potato (serve with water).",
+        "dryFoodMeal2": "Dry Food with salmon and peas (serve with water).",
+        "wetFoodMeal1": "Wet Food with turkey and carrots (serve with water).",
+        "wetFoodMeal2": "Wet Food with lamb and green beans (serve with water).",
+        "rawFoodMeal1": "Raw Chicken and rice (serve with water).",
+        "rawFoodMeal2": "Raw Salmon and carrots (serve with water).",
+        "grainFreeFoodMeal1": "Grain-Free food with turkey and pumpkin (serve with water).",
+        "grainFreeFoodMeal2": "Grain-Free food with beef and sweet potato (serve with water)."
+    },
+    "searchNearMe": {
+        "ngoheader": "Animal NGOs Near You",
+        "salonheader": "Pet Salons Near You",
+        "vetheader": "Veterinarian Near You",
+        "therapyheader": "Pet Therapy Near You",
+        "locationAccessError": "Location access required for displaying nearby locations",
+        "fetchError": "Failed to fetch nearby places",
+        "navigateButton": "Navigate"
+    },
+    "petCare": {
+        "title": "Pet Care",
+        "description": "Pet care is essential to ensure pets live happy, healthy lives through proper nutrition, medical attention, exercise, and love.",
+        "discoverServices": "Discover Pet services",
+        "vet": "Vet",
+        "petSalon": "Pet Salon",
+        "foodProducts": "Food Products",
+        "dietGenerator": "Diet Generator",
+        "petTherapy": "Pet Therapy"
+    }
+  }
+  

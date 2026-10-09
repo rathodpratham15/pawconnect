@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "PawConnect API - User Management",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

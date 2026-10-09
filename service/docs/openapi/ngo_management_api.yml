@@ -1,0 +1,104 @@
+openapi: 3.0.0
+info:
+  title: PawConnect API - NGO Management
+  version: 1.0.0
+  description: API for managing NGO profiles and details.
+
+paths:
+  /ngos:
+    post:
+      summary: Register a new NGO
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NGO'
+            example:
+              name: "Happy Tails Rescue"
+              location:
+                latitude: 34.0522
+                longitude: -118.2437
+                address: "Los Angeles, CA"
+              contactInfo: "+123456789"
+              description: "Rescuing and rehoming stray animals."
+      responses:
+        '201':
+          description: NGO successfully registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NGO'
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /ngos/{ngoId}:
+    get:
+      summary: Retrieve NGO profile
+      parameters:
+        - in: path
+          name: ngoId
+          required: true
+          schema:
+            type: string
+            example: "456e7897-f89a-12d3-a456-426614174321"
+      responses:
+        '200':
+          description: NGO profile details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NGO'
+        '404':
+          description: NGO not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    NGO:
+      type: object
+      properties:
+        ngoId:
+          type: string
+          example: "456e7897-f89a-12d3-a456-426614174321"
+        name:
+          type: string
+          example: "Happy Tails Rescue"
+        location:
+          $ref: '#/components/schemas/Location'
+        contactInfo:
+          type: string
+          example: "+123456789"
+        description:
+          type: string
+          example: "Rescuing and rehoming stray animals."
+
+    Location:
+      type: object
+      properties:
+        latitude:
+          type: number
+          example: 34.0522
+        longitude:
+          type: number
+          example: -118.2437
+        address:
+          type: string
+          example: "Los Angeles, CA"
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: "Invalid request payload"

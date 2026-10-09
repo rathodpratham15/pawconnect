@@ -1,0 +1,15 @@
+meta {
+  name: Retrieve pet profile
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/pets/:petId
+  body: none
+  auth: none
+}
+
+params:path {
+  petId: 
+}
