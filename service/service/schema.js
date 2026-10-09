@@ -15,6 +15,17 @@ CREATE TABLE IF NOT EXISTS ngos (
 );
 CREATE INDEX IF NOT EXISTS ngos_status_idx ON ngos (status);
 
+-- NGOs imported from external directories (e.g. Every.org) have no coordinates and carry extra links
+ALTER TABLE ngos ALTER COLUMN latitude DROP NOT NULL;
+ALTER TABLE ngos ALTER COLUMN longitude DROP NOT NULL;
+ALTER TABLE ngos ADD COLUMN IF NOT EXISTS source TEXT NOT NULL DEFAULT 'registered';
+ALTER TABLE ngos ADD COLUMN IF NOT EXISTS external_id TEXT;
+ALTER TABLE ngos ADD COLUMN IF NOT EXISTS website_url TEXT;
+ALTER TABLE ngos ADD COLUMN IF NOT EXISTS logo_url TEXT;
+ALTER TABLE ngos ADD COLUMN IF NOT EXISTS cover_image_url TEXT;
+ALTER TABLE ngos ADD COLUMN IF NOT EXISTS donate_url TEXT;
+CREATE UNIQUE INDEX IF NOT EXISTS ngos_source_external_idx ON ngos (source, external_id) WHERE external_id IS NOT NULL;
+
 CREATE TABLE IF NOT EXISTS users (
     id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name       TEXT NOT NULL,

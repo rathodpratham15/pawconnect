@@ -12,6 +12,12 @@ export const mapNgo = (row) =>
         contactInfo: row.contact_info,
         description: row.description,
         status: row.status,
+        source: row.source,
+        // Only set for NGOs imported from an external directory
+        websiteUrl: row.website_url ?? undefined,
+        logoUrl: row.logo_url ?? undefined,
+        coverImageUrl: row.cover_image_url ?? undefined,
+        donateUrl: row.donate_url ?? undefined,
     };
 
 const validatedLocation = (data, partial) => {

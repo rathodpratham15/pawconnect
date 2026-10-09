@@ -26,13 +26,20 @@ export interface NGO {
   name: string;
   registrationId: string;
   location: {
-    latitude: number;
-    longitude: number;
+    // null for NGOs imported from an external directory (no coordinates available)
+    latitude: number | null;
+    longitude: number | null;
     address: string;
   };
   contactInfo: string;
   description: string;
   status: 'verified' | 'pending' | 'rejected';
+  source?: 'registered' | 'every_org';
+  // Only for imported NGOs
+  websiteUrl?: string;
+  logoUrl?: string;
+  coverImageUrl?: string;
+  donateUrl?: string;
 }
 
 export interface Fundraiser {
