@@ -19,6 +19,11 @@ export interface Pet {
   healthConcerns: string[];
   shelterLocation: string;
   imageUrl?: string;
+  source?: 'registered' | 'rescuegroups';
+  // Only for pets imported from an external directory: adoption happens on the shelter's own page
+  description?: string;
+  organizationName?: string;
+  externalUrl?: string;
 }
 
 export interface NGO {

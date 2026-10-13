@@ -120,12 +120,20 @@ export default function PetAdoptPage() {
 
   const handleAdoptClick = async (pet: Pet) => {
     const petName = pet.name || 'this pet';
+    // Pets listed by an outside shelter are adopted on that shelter's own page
+    if (pet.source && pet.source !== 'registered' && pet.externalUrl) {
+      window.open(pet.externalUrl, '_blank', 'noopener,noreferrer');
+      setToastSeverity('info');
+      setToastMessage(`Opening ${pet.organizationName || 'the shelter'}'s page for ${petName}. Adoption is arranged with them directly.`);
+      return;
+    }
     try {
       await api.post(`/pets/${pet._id}/adopt`, {});
       setToastSeverity('success');
       setToastMessage(`Adoption request for ${petName} saved. You can follow its status under "My adoption requests". 🐾`);
     } catch (err: any) {
-      // 409 = this user already has a pending request for the pet
+      // 409 = this user already has a pending request, or the pet belongs to an outside shelter
+      if (err.response?.data?.externalUrl) window.open(err.response.data.externalUrl, '_blank', 'noopener,noreferrer');
       setToastSeverity(err.response?.status === 409 ? 'info' : 'error');
       setToastMessage(err.response?.data?.message || 'Could not send your adoption request. Please try again.');
     }
