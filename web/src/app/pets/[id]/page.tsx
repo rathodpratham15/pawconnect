@@ -246,8 +246,8 @@ export default async function PetDetailPage({ params }: PageProps) {
                     ))}
                   </ul>
                 ) : (
-                  <p style={{ color: '#4E8A5E', margin: 0, fontWeight: 600 }}>
-                    ✓ Full veterinary checkup completed, up to date on vaccines and deworming.
+                  <p style={{ color: '#6E5D53', margin: 0 }}>
+                    No special health notes listed. Ask the shelter about vaccinations and veterinary history.
                   </p>
                 )}
               </div>
