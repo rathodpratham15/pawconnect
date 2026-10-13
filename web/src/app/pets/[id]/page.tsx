@@ -234,6 +234,16 @@ export default async function PetDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
+              {/* About (imported listings carry the shelter's own description) */}
+              {pet.description && (
+                <div style={{ marginBottom: '1.75rem' }}>
+                  <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#2C1810', margin: '0 0 0.5rem' }}>
+                    About {name}
+                  </h2>
+                  <p style={{ color: '#5C483D', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>{pet.description}</p>
+                </div>
+              )}
+
               {/* Health concerns */}
               <div style={{ marginBottom: '1.75rem' }}>
                 <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#2C1810', margin: '0 0 0.5rem' }}>
@@ -263,16 +273,35 @@ export default async function PetDetailPage({ params }: PageProps) {
                   gap: '0.75rem',
                 }}
               >
-                <Link
-                  href={`/login?from=${encodeURIComponent(`/pets/${pet._id}`)}`}
-                  className="paw-button-primary"
-                  style={{ width: '100%', textAlign: 'center', fontSize: '1.05rem', padding: '14px' }}
-                >
-                  Adopt {name} – Sign In to Apply
-                </Link>
-                <p style={{ fontSize: '0.8rem', color: '#8C7769', textAlign: 'center', margin: 0 }}>
-                  Shelter staff will review your application and schedule a meet-and-greet.
-                </p>
+                {pet.source && pet.source !== 'registered' && pet.externalUrl ? (
+                  <>
+                    <a
+                      href={pet.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="paw-button-primary"
+                      style={{ width: '100%', textAlign: 'center', fontSize: '1.05rem', padding: '14px', display: 'block', boxSizing: 'border-box' }}
+                    >
+                      Adopt {name} via {pet.organizationName || 'the shelter'}
+                    </a>
+                    <p style={{ fontSize: '0.8rem', color: '#8C7769', textAlign: 'center', margin: 0 }}>
+                      Adoption is arranged directly with {pet.organizationName || 'the shelter'}. Listing provided by RescueGroups.org.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href={`/login?from=${encodeURIComponent(`/pets/${pet._id}`)}`}
+                      className="paw-button-primary"
+                      style={{ width: '100%', textAlign: 'center', fontSize: '1.05rem', padding: '14px' }}
+                    >
+                      Adopt {name} – Sign In to Apply
+                    </Link>
+                    <p style={{ fontSize: '0.8rem', color: '#8C7769', textAlign: 'center', margin: 0 }}>
+                      Your request is reviewed by a PawConnect administrator.
+                    </p>
+                  </>
+                )}
               </div>
             </div>
           </article>
