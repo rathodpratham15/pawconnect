@@ -6,6 +6,13 @@ export const requestAdoption = async (request, response) => {
     try {
         const result = await adoptionService.createRequest(request.params.petId, request.user._id, request.body ?? {});
         if (!result) return response.status(404).json({ message: "Pet not found" });
+        if (result.external) {
+            // The shelter lives on another platform, so it must be contacted there
+            return response.status(409).json({
+                message: `${result.external.organization || "This shelter"} manages adoptions on its own page. Please apply there.`,
+                externalUrl: result.external.url,
+            });
+        }
         if (result.duplicate) {
             return response.status(409).json({ message: "You already have a pending adoption request for this pet" });
         }

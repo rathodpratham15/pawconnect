@@ -15,6 +15,11 @@ const mapPet = (row) =>
         healthConcerns: row.health_concerns,
         shelterLocation: row.shelter_location,
         imageUrl: row.image_url ?? undefined,
+        source: row.source,
+        // Only set for pets imported from an external directory
+        description: row.description ?? undefined,
+        organizationName: row.organization_name ?? undefined,
+        externalUrl: row.external_url ?? undefined,
     };
 
 // Validates the fields present in `data`; with `partial` only those fields are required to be valid

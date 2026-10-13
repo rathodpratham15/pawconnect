@@ -31,6 +31,13 @@ Run `npm run seed` in `service/` once (with `DATABASE_URL` set, e.g. from the ho
 ### Real NGOs (optional, Every.org)
 Put `DATABASE_URL` and `EVERY_ORG_API_KEY` in `service/.env` (gitignored, never commit it) and run `npm run import:ngos -- --limit 60` from `service/`. It searches Every.org's animal-welfare nonprofits, fetches each profile (address, logo, website, donate link) and stores them as verified NGOs with source `every_org`. Re-running refreshes them and never changes a status you set (a rejected NGO stays rejected). Imported NGOs have no map coordinates; per Every.org's terms the UI shows their name and logo and sends donations to their Every.org profile.
 
+### Real pets (optional, RescueGroups)
+Put `DATABASE_URL` and `RESCUEGROUPS_API_KEY` in `service/.env` (gitignored, never commit it) and run `npm run import:pets` from `service/`. Options: `--limit 60` (pets per species), `--species dogs,cats,rabbits`, `--zip 02115 --miles 50` (only pets near a US/Canadian postal code), `--keep-stale`.
+- Pets are matched by their RescueGroups id, so re-running refreshes them. Listings without a photo are skipped.
+- After a complete run, imported pets of the species you fetched that are no longer listed (adopted or removed) are deleted so the site doesn't show stale animals. Other species are left alone; use `--keep-stale` to disable the cleanup.
+- Imported pets keep a link to the shelter's own page (`externalUrl`). Adoption is arranged there: the "Adopt" buttons open that page instead of creating an internal adoption request (the API answers `409` with the link if asked).
+- The API key is only needed when running the import, never by the deployed API. Schedule it (e.g. a weekly GitHub Action or cron) to keep listings fresh.
+
 ## 3. Frontend (`web/`, Next.js) – Vercel
 - Root directory: `web` · Framework preset: Next.js (auto-detected) · no `vercel.json` needed.
 - Environment variables (see `web/.env.example`; `NEXT_PUBLIC_*` are baked in at build time, so redeploy after changing them):

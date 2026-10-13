@@ -51,6 +51,15 @@ CREATE TABLE IF NOT EXISTS pets (
     image_url         TEXT
 );
 
+-- Pets imported from external adoption directories (e.g. RescueGroups) link out to the shelter's own page
+ALTER TABLE pets ADD COLUMN IF NOT EXISTS source TEXT NOT NULL DEFAULT 'registered';
+ALTER TABLE pets ADD COLUMN IF NOT EXISTS external_id TEXT;
+ALTER TABLE pets ADD COLUMN IF NOT EXISTS external_url TEXT;
+ALTER TABLE pets ADD COLUMN IF NOT EXISTS description TEXT;
+ALTER TABLE pets ADD COLUMN IF NOT EXISTS organization_name TEXT;
+ALTER TABLE pets ADD COLUMN IF NOT EXISTS last_seen_at TIMESTAMPTZ;
+CREATE UNIQUE INDEX IF NOT EXISTS pets_source_external_idx ON pets (source, external_id) WHERE external_id IS NOT NULL;
+
 CREATE TABLE IF NOT EXISTS food_products (
     id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name              TEXT NOT NULL,

@@ -36,14 +36,18 @@ const getRequest = async (id, options) => {
     return mapRequest(rows[0], options) ?? null;
 };
 
-// Returns null when the pet doesn't exist, or { duplicate: true } when a request is already open
+// Returns null when the pet doesn't exist, { duplicate: true } when a request is already open, or
+// { external: {...} } when the pet belongs to an external shelter (requests there can't be received by us)
 export const createRequest = async (petId, userId, data) => {
     if (!isUuid(petId)) return null;
     const message = optionalString(data, "message") ?? "";
     if (message.length > 1000) throw new ValidationError("message must be at most 1000 characters");
 
-    const pet = await query("SELECT id FROM pets WHERE id = $1", [petId]);
+    const pet = await query("SELECT id, source, external_url, organization_name FROM pets WHERE id = $1", [petId]);
     if (pet.rowCount === 0) return null;
+    if (pet.rows[0].source !== "registered") {
+        return { external: { url: pet.rows[0].external_url, organization: pet.rows[0].organization_name } };
+    }
 
     try {
         const { rows } = await query(
